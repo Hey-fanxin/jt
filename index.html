@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>www.bianjunping.com</title>
+    <link href="../namebjp.github.io/css/base.css" rel="stylesheet"/>
+    <style>
+        *{margin:0;padding:0;list-style:none;}
+        img{width:100%;}
+        .box{width:1050px;margin:0 auto;background: #d3fbff;}
+        .atl{width:100%;height:50px;text-align:center;padding-top:30px;font-size:40px;color: #10f8ff;background: #000000;}
+        .btn-box{width:100%;margin-top:30px;}
+        .btn-box li{width:230px;float:left;height:180px;margin:16px;position:relative;overflow:hidden;}
+        .btn-box li div{width:230px;height:180px;background: #000000;opacity:0.5;filter:alpha(opacity:50);position:absolute;top:0;left:-400px;}
+        .btn-box li div a{width:100%;height:180px;color:#fff;font-size:20px;line-height:180px;text-align:center;position:absolute;left:0;top:0;}
+        .btn-box .ma-0{margin-right:0}
+    </style>
+    <script src="../namebjp.github.io/js/common1.0.js"></script>
+    <script>
+        domReady(function () {
+            'use strict';
+            var oUl=document.getElementById('ul1');
+            var aLi=oUl.children;
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].onmouseenter=function(ev){
+                    var oEvent=ev || event;
+                    var n=hoverDir(this, oEvent);
+                    var oDiv=this.children[1];
+                    switch(n){
+                        case 0:
+                            oDiv.style.left='400px';
+                            oDiv.style.top=0;
+                            break;
+                        case 1:
+                            oDiv.style.left=0;
+                            oDiv.style.top='300px';
+                            break;
+                        case 2:
+                            oDiv.style.left='-400px';
+                            oDiv.style.top=0;
+                            break;
+                        case 3:
+                            oDiv.style.left=0;
+                            oDiv.style.top='-300px';
+                            break;
+                    }
+                    move(oDiv, {left: 0, top: 0});
+                };
+
+                aLi[i].onmouseleave=function(ev){
+                    var oEvent=ev || event;
+                    var n=hoverDir(this, oEvent);
+                    var oDiv=this.children[1];
+                    switch(n){
+                        case 0:
+                            move(oDiv, {left: 400, top: 0});
+                            break;
+                        case 1:
+                            move(oDiv, {left: 0, top: 300});
+                            break;
+                        case 2:
+                            move(oDiv, {left: -400, top: 0});
+                            break;
+                        case 3:
+                            move(oDiv, {left: 0, top: -300});
+                            break;
+                    }
+                };
+            }
+        })
+    </script>
+</head>
+<body style="background:#000000;">
+<div class="box">
+    <h2 class="atl">请点击查看项目</h2>
+    <ul class="btn-box clearfix" id="ul1">
+        <li>
+            <a href="javascript:;">
+                <img src="img2/yinglou.jpg" alt="">
+            </a>
+            <div>
+                <a href="../yingliu/index.html" target="_blank">蒙娜丽莎<br/>婚纱摄影</a>
+            </div>
+        </li>
+        <li><a href=""><img src="img2/opo.jpg" alt=""></a><div><a href="../oppowanag/index.html" target="_blank">opo官网</a></div></li>
+        <li><a href=""><img src="img2/linghun.jpg" alt=""></a><div><a href="../linghunhuixiang/index.html" target="_blank">灵魂回响官网</a></div></li>
+        <li class="ma-0"><a href=""><img src="img2/baideli.jpg" alt=""></a><div><a href="../baideli_shouji/index.html" target="_blank">百利得汽车首页</a></div></li>
+        <li><a href=""><img src="img2/meilishuo.jpg" alt=""></a><div><a href="../meilishuo/index.html" target="_blank">美丽说-官网</a></div></li>
+        <li><a href="javascript:;"><img src="img2/aiqiyi.jpg" alt=""></a> <div><a href="../aiqiyi/index.html" target="_blank">爱奇艺影视</a></div></li>
+        <li><a href=""><img src="img2/shouji-JD.jpg" alt=""></a><div><a href="../jd_shouj/index.html" target="_blank">JD-手机端</a></div></li>
+        <li class="ma-0"><a href=""><img src="img2/erhsouche-shouji.jpg" alt=""></a><div><a href="../baideli_shouji/index.html" target="_blank">二手车--手机端</a></div></li>
+    </ul>
+</div>
+</body>
+</html>
